@@ -19,12 +19,10 @@ namespace Examination_sysyem.Exams
             foreach (var item in QuestionAnswer)
             {
                 item.Key.Display();
-             
-                foreach (var answer in item.Value)
-                {
-                    Console.WriteLine($"your Answer: {answer.AnswerInput}\n");
+                Console.WriteLine($"Your Answer: {item.Value}");
 
-                }
+
+
                 //Console.WriteLine(item.Key.CorrectAnswer.AnswerInput); 
             }
         }

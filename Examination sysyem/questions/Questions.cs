@@ -13,15 +13,18 @@ namespace Examination_sysyem.questions
         public string Header { get; set; }
         public string Body { get; set; }
         public double Marks { get; set; }
-        public  AnswerList CorrectAnswer { get; set; }
+        //public  AnswerList CorrectAnswer { get; set; 
 
         public Questions(string header,string body,  double marks)
         {
             Body = body;
             Header = header;
             Marks = marks;
-            CorrectAnswer = new AnswerList() ;
+            //CorrectAnswer = new AnswerList() ;
         }
+
+        public abstract Answers GetAnswer();
+        //public abstract bool IsCorrect();
         public abstract void Display();
     }
 }

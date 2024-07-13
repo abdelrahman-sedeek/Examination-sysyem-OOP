@@ -18,6 +18,10 @@ namespace Examination_sysyem.answers
         {
             return AnswerInput == _answerInput;
         }
+        public override string ToString()
+        {
+            return string.Join(",", AnswerInput);
+        }
 
     }
 }

@@ -10,11 +10,12 @@ namespace Examination_sysyem.questions
     public class ChooseAllQuestions:Questions
     {
         public List<string> Options { get; set; }
-
-        public ChooseAllQuestions(string header, string body,  double marks, Answers CorrectAnswer, List<string> options)
-            :base(header, body, marks, CorrectAnswer)
+        public List<int> CorrectAnswers { get; set; }
+        public ChooseAllQuestions(string header, string body,  double marks,  List<string> options,List<int> _correctAnswer)
+            :base(header, body, marks)
         {
             Options = options;
+            CorrectAnswers = new List<int>();
         }
         public override  void Display()
         {
@@ -23,6 +24,16 @@ namespace Examination_sysyem.questions
             {
                 Console.WriteLine($"{i+1}: {Options[i]}");
             }
+
+        }
+
+        public override Answers GetAnswer()
+        {
+            Console.WriteLine();
+            Console.Write("Enter the numbers of your choices  ");
+            string response = Console.ReadLine();
+            List<string> responses = response.Split(',').Select(r => ( r.Trim()) ).ToList();
+            return new Answers( responses );
 
         }
     }

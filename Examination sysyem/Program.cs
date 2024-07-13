@@ -11,20 +11,20 @@ namespace Examination_sysyem
 
         static void Main(string[] args)
         {
-            Questions q1 = new TrueOrFalseQuestion("Q1", "The Earth is flat.", 5);
-            Questions q2 = new ChoodeOneQuestion("Q2", "Body = \"Which is the largest planet?\"", 5, new List<string> { "Earth", "Mars", "Jupiter", "Saturn" });
+            Questions q1 = new TrueOrFalseQuestion("Q1", "The Earth is flat.", 5,true);
+            Questions q2 = new ChoodeOneQuestion("Q2", "Body = \"Which is the largest planet?\"", 5, new List<string> { "Earth", "Mars", "Jupiter", "Saturn" },3);
+            Questions q3 = new ChooseAllQuestions("Math CA", "Select all prime numbers", 5, new List<string> { "2", "3", "4", "5" }, new List<int> { 0, 1, 3 });
 
-            AnswerList answerQ1 = new AnswerList() ;
-            answerQ1.Add(new Answers( new List<string> { "5" }));
+            
            
         
             Exam practice = new PracticeExam(30, 1);
-            practice.QuestionAnswer.Add(q1,  answerQ1);
-           
-            AnswerList answerQ2 = new AnswerList();
-            answerQ2.Add(new Answers(new List<string> { "Jupiter" }));
-            Exam finalExam = new FinalExam(60,1);
-            finalExam.QuestionAnswer.Add(q2, answerQ2);
+            practice.QuestionAnswer.Add(q1,  null);
+            practice.QuestionAnswer.Add(q2,  null);
+            practice.QuestionAnswer.Add(q3,  null);
+
+            practice.TakeExam();
+
 
             practice.ShowExam();
         }

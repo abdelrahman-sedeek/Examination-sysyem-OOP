@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,10 +11,12 @@ namespace Examination_sysyem.questions
     public class ChoodeOneQuestion :Questions
     {
         public List<string> Options { get; set; }
-        public ChoodeOneQuestion(string header, string body,  double marks, Answers CorrectAnswer, List<string> options)
-            : base(header, body,  marks, CorrectAnswer)
+        public int CorrectAnswerIndex { get; set; }
+        public ChoodeOneQuestion(string header, string body,  double marks, List<string> options,int _CorrectAnswerIndex)
+            : base(header, body,  marks)
         {
             Options = options;
+            CorrectAnswerIndex = _CorrectAnswerIndex;
         }
         public override void Display()
         {
@@ -22,6 +25,19 @@ namespace Examination_sysyem.questions
             {
                 Console.WriteLine($"{i + 1}: {Options[i]}");
             }
+        }
+
+  
+
+       
+        public override Answers GetAnswer()
+        {
+
+            Console.Write("Enter the number of your choice: ");
+            string response = Console.ReadLine();
+            
+           
+            return new Answers(new List<string> { response });
         }
     }
 }
