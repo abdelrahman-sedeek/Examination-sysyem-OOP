@@ -24,7 +24,8 @@ namespace Examination_sysyem.questions
         }
 
         public abstract Answers GetAnswer();
-        //public abstract bool IsCorrect();
+        public abstract Answers GetCorrectAnswer();
+        public abstract bool IsCorrect(Answers Answer);
         public abstract void Display();
     }
 }

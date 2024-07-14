@@ -28,5 +28,21 @@ namespace Examination_sysyem.questions
             return new Answers(new List<string> { response });
 
         }
+
+        public override Answers GetCorrectAnswer()
+        {
+            return new Answers(new List<string> { CorrectAnswerIndex.ToString() });
+        }
+
+        public override bool IsCorrect(Answers Answer)
+        {
+            string userInput = Answer.AnswerInput[0];
+            bool userAnswer;
+            if (!bool.TryParse(userInput, out userAnswer))
+            {
+                return false; 
+            }
+            return userAnswer == CorrectAnswerIndex ;
+        }
     }
 }

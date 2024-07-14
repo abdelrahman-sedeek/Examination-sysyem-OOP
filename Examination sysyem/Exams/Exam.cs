@@ -15,14 +15,15 @@ namespace Examination_sysyem.Exams
 
         public Exam(int time, int numberOfQuestions)
         {
-            Time = time;
-            NumberOfQuestions = numberOfQuestions;
-            QuestionAnswer= new Dictionary<Questions, Answers>();
+           this.Time = time;
+            this.NumberOfQuestions = numberOfQuestions;
+            this.QuestionAnswer = new Dictionary<Questions, Answers>();
         }
 
         public  void TakeExam()
         {
             
+            Console.WriteLine($"Time is: {Time} minutes");
             foreach (var x in QuestionAnswer.Keys)
             {
                 x.Display();

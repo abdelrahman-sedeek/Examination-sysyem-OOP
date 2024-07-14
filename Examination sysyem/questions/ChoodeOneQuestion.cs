@@ -39,5 +39,17 @@ namespace Examination_sysyem.questions
            
             return new Answers(new List<string> { response });
         }
+
+        public override Answers GetCorrectAnswer()
+        {
+            return new Answers(new List<string> { (CorrectAnswerIndex + 1 ).ToString() });
+        }
+
+        public override bool IsCorrect(Answers Answer)
+        {
+            string userResponse = Answer.AnswerInput[0];
+
+            return int.Parse(userResponse) - 1 == CorrectAnswerIndex;
+        }
     }
 }

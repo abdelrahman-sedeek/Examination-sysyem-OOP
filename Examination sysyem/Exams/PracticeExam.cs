@@ -15,15 +15,16 @@ namespace Examination_sysyem.Exams
 
         public override void ShowExam()
         {
-            Console.WriteLine("Practice Exam:");
+          
             foreach (var item in QuestionAnswer)
             {
+                bool IsCorrect=item.Key.IsCorrect(item.Value);
                 item.Key.Display();
+
+                Console.WriteLine(IsCorrect? " 'Correct' ": $" 'InCorrect '\n Correct Answer: {item.Key.GetCorrectAnswer()} ");
+                
                 Console.WriteLine($"Your Answer: {item.Value}");
 
-
-
-                //Console.WriteLine(item.Key.CorrectAnswer.AnswerInput); 
             }
         }
 

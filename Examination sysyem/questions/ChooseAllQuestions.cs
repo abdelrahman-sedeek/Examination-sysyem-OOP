@@ -1,5 +1,6 @@
 ﻿using Examination_sysyem.answers;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,12 @@ namespace Examination_sysyem.questions
     public class ChooseAllQuestions:Questions
     {
         public List<string> Options { get; set; }
-        public List<int> CorrectAnswers { get; set; }
+        public List<int> CorrectAnswerIndices { get; set; }
         public ChooseAllQuestions(string header, string body,  double marks,  List<string> options,List<int> _correctAnswer)
             :base(header, body, marks)
         {
             Options = options;
-            CorrectAnswers = new List<int>();
+            CorrectAnswerIndices = new List<int>();
         }
         public override  void Display()
         {
@@ -35,6 +36,27 @@ namespace Examination_sysyem.questions
             List<string> responses = response.Split(',').Select(r => ( r.Trim()) ).ToList();
             return new Answers( responses );
 
+        }
+
+        public override Answers GetCorrectAnswer()
+        {
+
+            var correctAnswers = CorrectAnswerIndices.Select(i => (i + 1).ToString()).ToList();
+            return new Answers(correctAnswers);
+        }
+
+        public override bool IsCorrect(Answers Answer)
+        {
+            for(int i = 0;i<Answer.AnswerInput.Count;i++)
+            {
+
+                if (!(CorrectAnswerIndices.ToString()).Contains( Answer.AnswerInput[i]))
+                {
+                    return false;
+                }
+
+            }
+            return true;
         }
     }
 }
