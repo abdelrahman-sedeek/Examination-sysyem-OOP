@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Examination_sysyem.answers;
 using Examination_sysyem.Exams;
+using Examination_sysyem.subject;
 
 namespace Examination_sysyem
 {
@@ -21,14 +22,14 @@ namespace Examination_sysyem
 
 
 
+            Subject subject1 = new Subject("Math");
 
 
-
-            Exam practice = new PracticeExam(30, 3);
+            Exam practice = new PracticeExam(30, 3, subject1);
             practice.QuestionAnswer.Add(q1,  null);
             practice.QuestionAnswer.Add(q2,  null);
             practice.QuestionAnswer.Add(q3,  null);
-            Exam Final = new FinalExam(30, 3);
+            Exam Final = new FinalExam(30, 3, subject1);
             Final.QuestionAnswer.Add(q4, null);
             Final.QuestionAnswer.Add(q5, null);
             Final.QuestionAnswer.Add(q6, null);

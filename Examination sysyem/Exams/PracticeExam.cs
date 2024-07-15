@@ -1,5 +1,6 @@
 ﻿using Examination_sysyem.answers;
 using Examination_sysyem.questions;
+using Examination_sysyem.subject;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,8 @@ namespace Examination_sysyem.Exams
 {
     public class PracticeExam:Exam
     {
-        public PracticeExam(int time, int numberOfQuestions )
-            : base(time, numberOfQuestions) { }
+        public PracticeExam(int time, int numberOfQuestions,Subject subject )
+            : base(time, numberOfQuestions,subject) { }
 
         public override void ShowExam()
         {
@@ -22,7 +23,7 @@ namespace Examination_sysyem.Exams
                 item.Key.Display();
 
                 Console.WriteLine(IsCorrect? " 'Correct' ": $" 'InCorrect '\n Correct Answer: {item.Key.GetCorrectAnswer()} ");
-                
+                //Console.WriteLine($"Correct Answer: {item.Key.GetCorrectAnswer()}");
                 Console.WriteLine($"Your Answer: {item.Value}");
 
             }

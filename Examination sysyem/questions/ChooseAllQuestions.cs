@@ -16,7 +16,7 @@ namespace Examination_sysyem.questions
             :base(header, body, marks)
         {
             Options = options;
-            CorrectAnswerIndices = new List<int>();
+            CorrectAnswerIndices = _correctAnswer;
         }
         public override  void Display()
         {
@@ -47,7 +47,8 @@ namespace Examination_sysyem.questions
 
         public override bool IsCorrect(Answers Answer)
         {
-            for(int i = 0;i<Answer.AnswerInput.Count;i++)
+       
+            for (int i = 0;i<Answer.AnswerInput.Count;i++)
             {
 
                 if (!(CorrectAnswerIndices.ToString()).Contains( Answer.AnswerInput[i]))

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Examination_sysyem.questions;
 using Examination_sysyem.answers;
 using System.Collections;
+using Examination_sysyem.subject;
 
 namespace Examination_sysyem.Exams
 {
@@ -11,13 +12,15 @@ namespace Examination_sysyem.Exams
     {
         public int Time { get; set; }
         public int NumberOfQuestions { get; set; }
+        public Subject Subject { get; set; }
         public Dictionary<Questions, Answers> QuestionAnswer { get; set; }
-
-        public Exam(int time, int numberOfQuestions)
+       
+        public Exam(int time, int numberOfQuestions,Subject _subject)
         {
            this.Time = time;
             this.NumberOfQuestions = numberOfQuestions;
             this.QuestionAnswer = new Dictionary<Questions, Answers>();
+            this.Subject = _subject;
         }
 
         public  void TakeExam()

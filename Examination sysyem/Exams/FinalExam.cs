@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Examination_sysyem.subject;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace Examination_sysyem.Exams
 {
     public class FinalExam : Exam
     {
-        public FinalExam(int time, int NumberOfquestions) : base(time, NumberOfquestions) { }
+        public FinalExam(int time, int NumberOfquestions, Subject subject) : base(time, NumberOfquestions,subject) { }
 
         public override void ShowExam()
         {
