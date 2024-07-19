@@ -6,4 +6,8 @@
     <RootNamespace>Examination_sysyem</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
+  </ItemGroup>
+
 </Project>

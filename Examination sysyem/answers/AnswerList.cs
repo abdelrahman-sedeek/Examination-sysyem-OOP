@@ -7,7 +7,5 @@ using System.Threading.Tasks;
 namespace Examination_sysyem.answers
 {
     public class AnswerList:List<Answers>
-    {
-
-    }
+    { }
 }

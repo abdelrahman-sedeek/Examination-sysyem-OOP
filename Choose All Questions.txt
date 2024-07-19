@@ -1,0 +1,72 @@
+Header: Math CA
+Body: Select all prime numbers
+Marks: 5
+Option 1. 2 
+Option 2. 3 
+Option 3. 4 
+Option 4. 5 
+Correct options for this question : 
+1,2,4
+
+============================================
+
+Header: Q6
+Body: Select all even numbers
+Marks: 5
+Option 1. 1 
+Option 2. 2 
+Option 3. 3 
+Option 4. 4 
+Correct options for this question : 
+2,4
+
+============================================
+
+Header: Math CA
+Body: Select all prime numbers
+Marks: 5
+Option 1. 2 
+Option 2. 3 
+Option 3. 4 
+Option 4. 5 
+Correct options for this question : 
+1,2,4
+
+============================================
+
+Header: Q6
+Body: Select all even numbers
+Marks: 5
+Option 1. 1 
+Option 2. 2 
+Option 3. 3 
+Option 4. 4 
+Correct options for this question : 
+2,4
+
+============================================
+
+Header: Math CA
+Body: Select all prime numbers
+Marks: 5
+Option 1. 2 
+Option 2. 3 
+Option 3. 4 
+Option 4. 5 
+Correct options for this question : 
+1,2,4
+
+============================================
+
+Header: Q6
+Body: Select all even numbers
+Marks: 5
+Option 1. 1 
+Option 2. 2 
+Option 3. 3 
+Option 4. 4 
+Correct options for this question : 
+2,4
+
+============================================
+

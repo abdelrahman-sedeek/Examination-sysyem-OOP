@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Examination_sysyem.Exams
 {
-    public class PracticeExam:Exam
+    public class PracticeExam: Exam<Questions, Answers>
     {
         public PracticeExam(int time, int numberOfQuestions,Subject subject )
             : base(time, numberOfQuestions,subject) { }

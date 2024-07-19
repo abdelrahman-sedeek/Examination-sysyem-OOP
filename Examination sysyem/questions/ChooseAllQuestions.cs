@@ -11,8 +11,8 @@ namespace Examination_sysyem.questions
     public class ChooseAllQuestions:Questions
     {
         public List<string> Options { get; set; }
-        public List<int> CorrectAnswerIndices { get; set; }
-        public ChooseAllQuestions(string header, string body,  double marks,  List<string> options,List<int> _correctAnswer)
+        public List<string> CorrectAnswerIndices { get; set; }
+        public ChooseAllQuestions(string header, string body,  double marks,  List<string> options,List<string> _correctAnswer)
             :base(header, body, marks)
         {
             Options = options;
@@ -38,26 +38,23 @@ namespace Examination_sysyem.questions
 
         }
 
-        public override Answers GetCorrectAnswer()
+        public override Answers GetCorrectAnswer( )
         {
 
-            var correctAnswers = CorrectAnswerIndices.Select(i => (i + 1).ToString()).ToList();
+            var correctAnswers = CorrectAnswerIndices.Select(int.Parse).Select(  i => (i + 1).ToString()).ToList();
             return new Answers(correctAnswers);
         }
 
         public override bool IsCorrect(Answers Answer)
         {
-       
-            for (int i = 0;i<Answer.AnswerInput.Count;i++)
-            {
+     
+            var answerSet = new HashSet<string>(  Answer.AnswerInput);
+            var correctSet = new HashSet<string>(CorrectAnswerIndices.Select(index => (int.Parse(index) + 1).ToString()));
 
-                if (!(CorrectAnswerIndices.ToString()).Contains( Answer.AnswerInput[i]))
-                {
-                    return false;
-                }
-
-            }
-            return true;
+         
+            return answerSet.SetEquals(correctSet);
+            return false;
         }
+
     }
 }
